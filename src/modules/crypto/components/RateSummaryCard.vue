@@ -1,0 +1,77 @@
+<template>
+  <div class="summary-card">
+    <div class="summary-header">
+      <span class="summary-title">{{ currency.shortName }}</span>
+    </div>
+    <div class="summary-card-rates">
+      <div
+        v-for="(rate, index) in currency.rates"
+        v-bind:key="'sc' + currency.shortName + index"
+      >
+        <span class="summary-rate-name">
+          {{ rate.shortName }}
+        </span>
+        <span class="summary-rate-price">
+          {{ formatPrice(rate.price, rate.shortName) }}
+        </span>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script lang="ts">
+import { Component, Vue, Prop } from "vue-property-decorator";
+import Currency from "../models/Currency";
+
+@Component
+export default class RateSummaryCard extends Vue {
+  @Prop({ required: true }) readonly currency: Currency;
+
+  private formatPrice(price: number, currencySymbol: string): string {
+    return new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: currencySymbol,
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }).format(price);
+  }
+}
+</script>
+
+<style scoped>
+.summary-card {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  background-image: linear-gradient(to bottom right, #a855f7, #6366f1);
+  border-radius: 5px;
+  min-width: 180px;
+}
+
+.summary-header {
+  display: flex;
+  text-align: left;
+  margin-bottom: 7px;
+}
+
+.summary-title {
+  flex: 1;
+  font-weight: bold;
+  color: white;
+}
+
+.summary-card-rates {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.summary-rate-name {
+  color: white;
+  font-size: 0.7rem;
+  margin-right: 6px;
+}
+.summary-rate-price {
+  color: yellow;
+}
+</style>

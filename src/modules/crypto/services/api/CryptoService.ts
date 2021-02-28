@@ -20,7 +20,7 @@ export default class CryptoService extends Api {
                     const response = await this.get(
                         '/pricemultifull',
                         {
-                            fsyms: 'BTC,ETH,LTC',
+                            fsyms: 'BTC,ETH,LTC,DASH',
                             tsyms: 'USD,EUR,BRL',
                             api_key: 'c60a00c5e7c979b5ad49a1d7792d875e89a1d71795fc3409e58a51ed5a0abb4a'
                         },
