@@ -1,5 +1,7 @@
 # easy-crypto
 
+Crypto currencies compare app based on Crypto Compare API.
+
 ## Project setup
 ```
 npm install
@@ -27,3 +29,10 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+## Built with
+
+- Vue
+- Typescript
+- Vuex
+
