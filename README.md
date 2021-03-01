@@ -1,6 +1,8 @@
 # easy-crypto
 
-Crypto currencies compare app based on Crypto Compare API.
+Crypto currencies compare Vue+Typescript app based on Crypto Compare API.
+
+**This is a study case project. Feel free to copy, modify or do whatever you whant.**
 
 ## Project setup
 ```
