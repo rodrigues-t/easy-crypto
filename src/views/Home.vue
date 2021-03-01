@@ -1,9 +1,9 @@
 <template>
   <div class="home">
-    <div v-if="homeCurrencies" class="summary-cards-row">
-      <div v-for="(curr, index) in homeCurrencies" v-bind:key="'hc_' + index">
-        <RateSummaryCard :currency="curr" />
-      </div>
+    <div v-if="homeCurrencies" class="grid sm:grid-cols-4 grid-cols-2">
+      <template v-for="(curr, index) in homeCurrencies">
+        <RateSummaryCard :currency="curr" v-bind:key="'hc_' + index" />
+      </template>
     </div>
   </div>
 </template>
@@ -30,11 +30,3 @@ export default class Home extends Vue {
   }
 }
 </script>
-
-<style scoped>
-.summary-cards-row {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-</style>
