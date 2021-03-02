@@ -41,11 +41,8 @@ export default class RateSummaryCard extends Vue {
 <style scoped>
 .summary-card {
   display: flex;
-  /* flex:1; */
   flex-direction: column;
   padding: 10px;
-  margin: 5px;
-  /* background-image: linear-gradient(to bottom right, #a855f7, #6366f1); */
   border-radius: 5px;
   min-width: 152px;
 }
