@@ -1,5 +1,5 @@
 <template>
-  <div class="summary-card">
+  <div class="summary-card bg-gradient-to-br from-purple-900 to-purple-700 shadow-lg">
     <div class="summary-header">
       <span class="summary-title">{{ currency.shortName }}</span>
     </div>
@@ -45,7 +45,7 @@ export default class RateSummaryCard extends Vue {
   flex-direction: column;
   padding: 10px;
   margin: 5px;
-  background-image: linear-gradient(to bottom right, #a855f7, #6366f1);
+  /* background-image: linear-gradient(to bottom right, #a855f7, #6366f1); */
   border-radius: 5px;
   min-width: 152px;
 }
