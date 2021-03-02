@@ -2,6 +2,8 @@
 
 Cryptocurrencies viewer based on Crypto Compare API. Developed with Vue and Typescript.
 
+<img src="git_imgs/print.png" />
+
 **This is a study case project. Feel free to copy, modify or do whatever you whant.**
 
 ## Getting Started
