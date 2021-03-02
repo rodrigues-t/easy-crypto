@@ -4,7 +4,7 @@ Cryptocurrencies viewer based on Crypto Compare API. Developed with Vue and Type
 
 <img src="git_imgs/print.png" />
 
-**This is a study case project. Feel free to copy, modify or do whatever you whant.**
+**This is a study case project. Feel free to copy, modify or do whatever you want.**
 
 ## Getting Started
 
