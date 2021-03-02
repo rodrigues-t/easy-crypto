@@ -1,6 +1,6 @@
 # easy-crypto
 
-Crypto currencies compare Vue+Typescript app based on Crypto Compare API.
+Cryptocurrencies viewer based on Crypto Compare API. Developed with Vue and Typescript.
 
 **This is a study case project. Feel free to copy, modify or do whatever you whant.**
 
@@ -52,6 +52,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 - Vue
 - Typescript
-- Vuex
 - Tailwind
+- Vuex
+
 
