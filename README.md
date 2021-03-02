@@ -20,7 +20,7 @@ You will need to configure a .env file. Take a look at .env.example.
 
 Basically you need to put your API key to be able to make http requests to Crypto Compare.
 
-**WARNING: If you intend to use this code in a real project DO NOT store your key in the .env file. Environment variables are embedded into the build, meaning anyone can view them by inspecting your app's files.** In this, case you need to use a back-end endpoint to intermediate.
+**WARNING: If you intend to use this code in a real project DO NOT store your key in the .env file. Environment variables are embedded into the build, meaning anyone can view them by inspecting your app's files.** In this case, you need to use a back-end endpoint to intermediate.
 
 **Install dependencies**
 ```
