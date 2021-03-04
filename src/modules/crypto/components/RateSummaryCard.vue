@@ -1,5 +1,7 @@
 <template>
-  <div class="summary-card bg-gradient-to-br from-purple-900 to-purple-700 shadow-lg">
+  <div
+    class="summary-card bg-gradient-to-br from-purple-900 to-purple-700 shadow-lg"
+  >
     <div class="summary-header">
       <span class="summary-title">{{ currency.shortName }}</span>
     </div>
@@ -12,7 +14,7 @@
           {{ rate.shortName }}
         </span>
         <span class="summary-rate-price">
-          {{ formatPrice(rate.price, rate.shortName) }}
+          {{ _formatPrice(rate.price, rate.shortName) }}
         </span>
       </div>
     </div>
@@ -20,20 +22,21 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop } from "vue-property-decorator";
+import { Component, Vue, Prop, Watch } from "vue-property-decorator";
 import Currency from "../models/Currency";
+import preferences from "@/store/modules/preferences";
+import { formatPrice } from "@/modules/crypto/services/core/Formatters";
 
 @Component
 export default class RateSummaryCard extends Vue {
   @Prop({ required: true }) readonly currency: Currency;
 
-  private formatPrice(price: number, currencySymbol: string): string {
-    return new Intl.NumberFormat("en-US", {
-      style: "currency",
-      currency: currencySymbol,
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2,
-    }).format(price);
+  get lang() {
+    return preferences.lang;
+  }
+
+  private _formatPrice(price: number, currencySymbol: string): string {
+    return formatPrice(price, currencySymbol, this.lang);
   }
 }
 </script>

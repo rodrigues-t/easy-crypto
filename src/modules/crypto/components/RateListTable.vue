@@ -33,15 +33,21 @@
 import { Component, Vue, Prop } from "vue-property-decorator";
 import Currency from "../models/Currency";
 import { formatPrice, formatNumber } from "@/modules/crypto/services/core/Formatters";
+import preferences from "@/store/modules/preferences";
 
 @Component
 export default class RateListTable extends Vue {
   @Prop({ required: true }) readonly currencies: Array<Currency>;
+
+  get lang() {
+    return preferences.lang;
+  }
+
   private _formatPrice(price: number, symbol: string): string {
-      return formatPrice(price, symbol)
+      return formatPrice(price, symbol, this.lang);
   }
   private _formatNumber(value: number): string {
-      return formatNumber(value)
+      return formatNumber(value, this.lang);
   }
 }
 </script>

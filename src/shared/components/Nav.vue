@@ -36,17 +36,41 @@
           <span v-on:click="toggleMenu">About</span>
         </router-link>
       </div>
+      <div class="flex items-center">        
+          <input class="w-4 h-4" name="lang" type="radio" value="en-US" v-model="lang">
+          <label class="ml-1 mr-3 text-white">
+            en
+          </label>
+          <input class="w-4 h-4" name="lang" type="radio" value="pt-BR" v-model="lang">
+          <label class="ml-1 text-white">
+            pt
+          </label>
+      </div>
     </div>
   </nav>
 </template>
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
+import { Component, Vue, Watch } from "vue-property-decorator";
+import preferences from "@/store/modules/preferences";
+
 @Component
 export default class Nav extends Vue {
   private menuOpened = false;
+  private lang: string;
+
+  constructor() {
+    super();
+    this.lang = preferences.language;
+  }
 
   private toggleMenu(): void {
     this.menuOpened = !this.menuOpened;
+  }
+  
+  @Watch('lang')
+  langChanged(newVal: string) {
+    this.lang = newVal;
+    preferences.setLang(newVal);
   }
 }
 </script>
