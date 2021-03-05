@@ -20,31 +20,44 @@
         </svg>
       </button>
     </div>
-    <div v-bind:class="'w-full flex-grow lg:flex lg:items-center lg:w-auto ' + (menuOpened ? 'block' : 'hidden')">
+    <div
+      v-bind:class="
+        'w-full flex-grow lg:flex lg:items-center lg:w-auto ' +
+        (menuOpened ? 'block' : 'hidden')
+      "
+    >
       <div class="lg:flex-grow">
         <router-link
           to="/"
           class="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-yellow-400 mr-4"
         >
-          <span v-on:click="toggleMenu">Home</span>
+          <span v-on:click="toggleMenu">{{ $t("message.nav.home") }}</span>
         </router-link>
         <router-link
           to="/about"
           v-on:click="toggleMenu"
           class="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-yellow-400 mr-4"
         >
-          <span v-on:click="toggleMenu">About</span>
+          <span v-on:click="toggleMenu">{{ $t("message.nav.about") }}</span>
         </router-link>
       </div>
-      <div class="flex items-center">        
-          <input class="w-4 h-4 form-radio text-yellow-400 focus:ring-yellow-100 focus:ring-0" name="lang" type="radio" value="en-US" v-model="lang">
-          <label class="ml-1 mr-3 text-white">
-            En
-          </label>
-          <input class="w-4 h-4 form-radio text-yellow-400 focus:ring-yellow-100 focus:ring-0" name="lang" type="radio" value="pt-BR" v-model="lang">
-          <label class="ml-1 text-white">
-            Pt
-          </label>
+      <div class="flex items-center">
+        <input
+          class="w-4 h-4 form-radio text-yellow-400 focus:ring-yellow-100 focus:ring-0"
+          name="lang"
+          type="radio"
+          value="en-US"
+          v-model="lang"
+        />
+        <label class="ml-1 mr-3 text-white"> En </label>
+        <input
+          class="w-4 h-4 form-radio text-yellow-400 focus:ring-yellow-100 focus:ring-0"
+          name="lang"
+          type="radio"
+          value="pt-BR"
+          v-model="lang"
+        />
+        <label class="ml-1 text-white"> Pt </label>
       </div>
     </div>
   </nav>
@@ -66,11 +79,12 @@ export default class Nav extends Vue {
   private toggleMenu(): void {
     this.menuOpened = !this.menuOpened;
   }
-  
-  @Watch('lang')
+
+  @Watch("lang")
   langChanged(newVal: string) {
     this.lang = newVal;
     preferences.setLang(newVal);
+    this.$i18n.locale = newVal;
   }
 }
 </script>

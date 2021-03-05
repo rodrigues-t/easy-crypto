@@ -3,9 +3,9 @@
     <thead>
       <tr class="bg-yellow-100">
         <th class="text-left py-2 pl-4 pr-2 text-yellow-600">#</th>
-        <th class="text-left p-2 text-yellow-600">Coin</th>
-        <th class="text-left p-2 text-yellow-600">Price</th>
-        <th class="text-left p-2 text-yellow-600">Total Vol. 24h</th>
+        <th class="text-left p-2 text-yellow-600">{{ $t("message.coinTable.coin") }}</th>
+        <th class="text-left p-2 text-yellow-600">{{ $t("message.coinTable.price") }}</th>
+        <th class="text-left p-2 text-yellow-600">{{ $t("message.coinTable.totalVol24h") }}</th>
       </tr>
     </thead>
     <tbody>
