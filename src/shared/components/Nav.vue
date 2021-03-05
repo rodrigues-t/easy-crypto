@@ -37,13 +37,13 @@
         </router-link>
       </div>
       <div class="flex items-center">        
-          <input class="w-4 h-4" name="lang" type="radio" value="en-US" v-model="lang">
+          <input class="w-4 h-4 form-radio text-yellow-400 focus:ring-yellow-100 focus:ring-0" name="lang" type="radio" value="en-US" v-model="lang">
           <label class="ml-1 mr-3 text-white">
-            en
+            En
           </label>
-          <input class="w-4 h-4" name="lang" type="radio" value="pt-BR" v-model="lang">
+          <input class="w-4 h-4 form-radio text-yellow-400 focus:ring-yellow-100 focus:ring-0" name="lang" type="radio" value="pt-BR" v-model="lang">
           <label class="ml-1 text-white">
-            pt
+            Pt
           </label>
       </div>
     </div>
