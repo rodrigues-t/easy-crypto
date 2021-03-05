@@ -28,7 +28,7 @@ import preferences from "@/store/modules/preferences";
 import { formatPrice } from "@/modules/crypto/services/core/Formatters";
 
 @Component
-export default class RateSummaryCard extends Vue {
+export default class CoinRateCard extends Vue {
   @Prop({ required: true }) readonly currency: Currency;
 
   get lang() {

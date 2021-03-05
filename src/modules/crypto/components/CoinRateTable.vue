@@ -36,7 +36,7 @@ import { formatPrice, formatNumber } from "@/modules/crypto/services/core/Format
 import preferences from "@/store/modules/preferences";
 
 @Component
-export default class RateListTable extends Vue {
+export default class CoinRateTable extends Vue {
   @Prop({ required: true }) readonly currencies: Array<Currency>;
 
   get lang() {

@@ -2,26 +2,26 @@
   <div>
     <div v-if="homeCurrencies" class="grid sm:grid-cols-4 grid-cols-2 gap-2">
       <template v-for="(curr, index) in homeCurrencies">
-        <RateSummaryCard :currency="curr" v-bind:key="'hc_' + index" />
+        <CoinRateCard :currency="curr" v-bind:key="'hc_' + index" />
       </template>
     </div>
     <div class="mt-4" v-if="topCurrencies">
-      <RateListTable :currencies="topCurrencies" />
+      <CoinRateTable :currencies="topCurrencies" />
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue, Watch } from "vue-property-decorator";
-import RateSummaryCard from "@/modules/crypto/components/RateSummaryCard.vue";
-import RateListTable from "@/modules/crypto/components/RateListTable.vue";
+import { Component, Vue } from "vue-property-decorator";
+import CoinRateCard from "@/modules/crypto/components/CoinRateCard.vue";
+import CoinRateTable from "@/modules/crypto/components/CoinRateTable.vue";
 import CryptoServices from "@/modules/crypto/services/api/CryptoService";
 import Currency from "@/modules/crypto/models/Currency";
 
 @Component({
   components: {
-    RateSummaryCard,
-    RateListTable,
+    CoinRateCard,
+    CoinRateTable,
   },
 })
 export default class Home extends Vue {
