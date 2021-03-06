@@ -5,7 +5,7 @@ import { convertResponseToCurrency, convertResponseListToCurrency } from "../../
 export default class CryptoService extends Api {
     private getKey = () => process.env.VUE_APP_CP_KEY;
 
-    public async getSingleSymbolsPrice(currencyFrom: string, currenciesTo: Array<string>): Promise<any> {
+    public async getSingleSymbolsPrice(currencyFrom: string, currenciesTo: Array<string>): Promise<unknown> {
         return await this.get(
             '/price',
             {

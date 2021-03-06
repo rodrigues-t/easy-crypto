@@ -22,7 +22,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop, Watch } from "vue-property-decorator";
+import { Component, Vue, Prop } from "vue-property-decorator";
 import Currency from "../models/Currency";
 import preferences from "@/store/modules/preferences";
 import { formatPrice } from "@/modules/crypto/services/core/Formatters";

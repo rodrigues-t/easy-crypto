@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any*/
 import Currency from "../../models/Currency";
 import Rate from "../../models/Rate";
 
