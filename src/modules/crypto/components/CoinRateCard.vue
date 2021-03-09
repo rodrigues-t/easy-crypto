@@ -1,5 +1,6 @@
 <template>
   <div
+    id="coinRateCard"
     class="summary-card bg-gradient-to-br from-purple-900 to-purple-700 shadow-lg"
   >
     <div class="summary-header">

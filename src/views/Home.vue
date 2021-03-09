@@ -28,7 +28,6 @@ export default class Home extends Vue {
   public homeCurrencies!: Array<Currency> | null;
   public topCurrencies!: Array<Currency> | null;
 
-  
   constructor() {
     super();
     this.homeCurrencies = null;
@@ -41,6 +40,7 @@ export default class Home extends Vue {
       ["USD", "EUR", "BRL"]
     );
     this.topCurrencies = await new CryptoServices().getTopBy24hVol("USD");
+    console.log(this.topCurrencies);
   }
 }
 </script>

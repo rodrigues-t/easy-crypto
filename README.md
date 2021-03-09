@@ -57,6 +57,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 - Vuex
 - vue-i18n
 - Tailwind
+- Vue Test Utils/Jest
 
 
 
