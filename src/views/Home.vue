@@ -35,12 +35,13 @@ export default class Home extends Vue {
   }
 
   async created() {
-    this.homeCurrencies = await new CryptoServices().getMultipleSymbolsPrice(
-      ["BTC", "ETH", "LTC", "DASH"],
-      ["USD", "EUR", "BRL"]
-    );
-    this.topCurrencies = await new CryptoServices().getTopBy24hVol("USD");
-    console.log(this.topCurrencies);
+    [this.homeCurrencies, this.topCurrencies] = await Promise.all([
+      (this.homeCurrencies = await new CryptoServices().getMultipleSymbolsPrice(
+        ["BTC", "ETH", "LTC", "DASH"],
+        ["USD", "EUR", "BRL"]
+      )),
+      (this.topCurrencies = await new CryptoServices().getTopBy24hVol("USD")),
+    ]);
   }
 }
 </script>
